@@ -9,19 +9,19 @@ class BrutalAlgorithm:
 
     @staticmethod
     def run_algorithm(pattern, text):
-        m = len(pattern)
-        n = len(text)
-        i = 0
-        j = 0
+        pattern_length = len(pattern)
+        text_length = len(text)
+        pattern_index = 0
+        text_index = 0 
 
         if (pattern and text):
-            for i in range(n - m + 1):
-                for j in range(m):
-                    if (text[i + j] != pattern[j]):
-                        j -= 1
+            for text_index in range(text_length - pattern_length + 1):
+                for pattern_index in range(pattern_length):
+                    if (text[text_index + pattern_index] != pattern[pattern_index]):
+                        pattern_index -= 1
                         break
 
-                if (j == m - 1):
-                    return i
+                if (pattern_index == pattern_length - 1):
+                    return text_index
         
         return None

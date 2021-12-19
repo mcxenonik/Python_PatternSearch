@@ -9,44 +9,45 @@ class KMPAlgorithm:
 
     @staticmethod
     def run_algorithm(pattern, text):
-        m = len(pattern)
-        n = len(text)
-        i = 0
-        j = 0
+        pattern_length = len(pattern)
+        text_length = len(text)
+        pattern_index = 0
+        text_index = 0
         
         if (pattern and text):
             dfa = KMPAlgorithm._dfa_array(pattern)
 
-            while (i < n and j < m):
-                # j = dfa.get(text[i], [0])[j]
-                if (text[i] in dfa):
-                    j = dfa[text[i]][j]
+            while (text_index < text_length and pattern_index < pattern_length):
+                # pattern_index = dfa.get(text[text_index], [0])[pattern_index]
+                if (text[text_index] in dfa):
+                    pattern_index = dfa[text[text_index]][pattern_index]
                 else:
-                    j = 0
+                    pattern_index = 0
 
-                i += 1
+                text_index += 1
                
-            if (j == m):
-                return i - m
+            if (pattern_index == pattern_length):
+                return text_index - pattern_length
         
         return None
 
 
     def _dfa_array(pattern):
-        m = len(pattern)
+        pattern_length = len(pattern)
         dfa = {}
         x = 0
 
         for char in pattern:
             if (char not in dfa):
-                dfa[char] = [0 for i in range(m)]
+                dfa[char] = [0 for i in range(pattern_length)]
  
         dfa[pattern[0]][0] = 1    
 
-        for j in range(1, m):
-            for c in dfa:                       # DLA KAŻDEJ LITERY ALFABETU
-                dfa[c][j] = dfa[c][x]           # PRZEJŚCIA NIE PASUJĄCE
-            dfa[pattern[j]][j] = j + 1          # PRZEJŚCIA PASUJĄCE
-            x = dfa[pattern[j]][x]              # AKTUALIZACJA STANU "PONOWNEGO URUCHAMIANIA"
+        for pattern_index in range(1, pattern_length):
+            for c in dfa:                                                       # DLA KAŻDEJ LITERY ALFABETU
+                dfa[c][pattern_index] = dfa[c][x]                               # PRZEJŚCIA NIE PASUJĄCE
+
+            dfa[pattern[pattern_index]][pattern_index] = pattern_index + 1      # PRZEJŚCIA PASUJĄCE
+            x = dfa[pattern[pattern_index]][x]                                  # AKTUALIZACJA STANU "PONOWNEGO URUCHAMIANIA"
 
         return dfa

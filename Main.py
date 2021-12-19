@@ -6,9 +6,9 @@ from Utils import Utils
 def run(input_file_name, number_of_elements_list):
     Utils.start_measurements(BrutalAlgorithm, input_file_name, number_of_elements_list)
 
-    Utils.start_measurements(KMPAlgorithm, input_file_name, number_of_elements_list)
-
     Utils.start_measurements(BrutalAlgorithm2, input_file_name, number_of_elements_list)
+
+    Utils.start_measurements(KMPAlgorithm, input_file_name, number_of_elements_list)
 
 
 if __name__ == "__main__":
