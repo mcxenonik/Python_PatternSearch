@@ -1,6 +1,8 @@
 from BrutalAlgorithm import BrutalAlgorithm
 from BrutalAlgorithm2 import BrutalAlgorithm2
 from KMPAlgorithm import KMPAlgorithm
+from KMPAlgorithm2 import KMPAlgorithm2
+from KMPAlgorithm3 import KMPAlgorithm3
 from BMAlgorithm import BMAlgorithm
 from BMAlgorithm2 import BMAlgorithm2
 from RKAlgorithm import RKAlgorithm
@@ -87,11 +89,10 @@ if __name__ == "__main__":
         print("BrutalAlgorithm:", pair[0], pair[1], BrutalAlgorithm.run_algorithm(pair[0], pair[1]))
         print("BrutalAlgorithm2:", pair[0], pair[1], BrutalAlgorithm2.run_algorithm(pair[0], pair[1]))
         print("KMPAlgorithm:", pair[0], pair[1], KMPAlgorithm.run_algorithm(pair[0], pair[1]))
+        print("KMPAlgorithm2:", pair[0], pair[1], KMPAlgorithm2.run_algorithm(pair[0], pair[1]))
+        print("KMPAlgorithm3:", pair[0], pair[1], KMPAlgorithm3.run_algorithm(pair[0], pair[1]))
         print("BMAlgorithm:", pair[0], pair[1], BMAlgorithm.run_algorithm(pair[0], pair[1]))
         print("BMAlgorithm2:", pair[0], pair[1], BMAlgorithm2.run_algorithm(pair[0], pair[1]))
         print("RKAlgorithm:", pair[0], pair[1], RKAlgorithm.run_algorithm(pair[0], pair[1]))
         print("---")
             
-
-    pa = ("AAB", "AAAB")
-    print("BrutalAlgorithm2:", pa[0], pa[1], BrutalAlgorithm2.run_algorithm(pa[0], pa[1]))
