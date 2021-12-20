@@ -8,6 +8,12 @@ class Utils():
     def __init__(self):
         pass
 
+    @staticmethod
+    def _get_alphabet(text):
+        alphabet = {char: -1 for char in text}
+
+        return alphabet
+
 
     def _clear_words(words_list):
         illegal_chars = [",", ".", "?", "!", ";", ":", "-", "–", "—", "/", "(", ")", "…", 
