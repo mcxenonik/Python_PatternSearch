@@ -3,6 +3,8 @@ from BrutalAlgorithm2 import BrutalAlgorithm2
 from KMPAlgorithm import KMPAlgorithm
 from BMAlgorithm import BMAlgorithm
 from BMAlgorithm2 import BMAlgorithm2
+from RKAlgorithm import RKAlgorithm
+from Utils import Utils
 
 
 if __name__ == "__main__":
@@ -20,6 +22,7 @@ if __name__ == "__main__":
     print("KMPAlgorithm:", KMPAlgorithm.run_algorithm("", text))
     print("BMAlgorithm:", BMAlgorithm.run_algorithm("", text))
     print("BMAlgorithm2:", BMAlgorithm2.run_algorithm("", text))
+    print("RKAlgorithm:", RKAlgorithm.run_algorithm("", text))
 
     print("\nEmpty text:")
     print("BrutalAlgorithm:", BrutalAlgorithm.run_algorithm(pattern, ""))
@@ -27,6 +30,7 @@ if __name__ == "__main__":
     print("KMPAlgorithm:", KMPAlgorithm.run_algorithm(pattern, ""))
     print("BMAlgorithm:", BMAlgorithm.run_algorithm(pattern, ""))
     print("BMAlgorithm2:", BMAlgorithm2.run_algorithm(pattern, ""))
+    print("RKAlgorithm:", RKAlgorithm.run_algorithm(pattern, ""))
 
     # empty string and text
     print("\nEmpty string and text:")
@@ -35,6 +39,7 @@ if __name__ == "__main__":
     print("KMPAlgorithm:", KMPAlgorithm.run_algorithm("", ""))
     print("BMAlgorithm:", BMAlgorithm.run_algorithm("", ""))
     print("BMAlgorithm2:", BMAlgorithm2.run_algorithm("", ""))
+    print("RKAlgorithm:", RKAlgorithm.run_algorithm("", ""))
 
     # string = text
     print("\nString = text:")
@@ -43,6 +48,7 @@ if __name__ == "__main__":
     print("KMPAlgorithm:", KMPAlgorithm.run_algorithm(text, text))
     print("BMAlgorithm:", BMAlgorithm.run_algorithm(text, text))
     print("BMAlgorithm2:", BMAlgorithm2.run_algorithm(text, text))
+    print("RKAlgorithm:", RKAlgorithm.run_algorithm(text, text))
 
     # string > text
     print("\nString > text:")
@@ -51,6 +57,7 @@ if __name__ == "__main__":
     print("KMPAlgorithm:", KMPAlgorithm.run_algorithm(long_patern, text))
     print("BMAlgorithm:", BMAlgorithm.run_algorithm(long_patern, text))
     print("BMAlgorithm2:", BMAlgorithm2.run_algorithm(long_patern, text))
+    print("RKAlgorithm:", RKAlgorithm.run_algorithm(long_patern, text))
 
     # string in text
     print("\nString in text:")
@@ -59,6 +66,7 @@ if __name__ == "__main__":
     print("KMPAlgorithm:", KMPAlgorithm.run_algorithm(pattern, text))
     print("BMAlgorithm:", BMAlgorithm.run_algorithm(pattern, text))
     print("BMAlgorithm2:", BMAlgorithm2.run_algorithm(pattern, text))
+    print("RKAlgorithm:", RKAlgorithm.run_algorithm(pattern, text))
 
     # string not in text
     print("\nString not in text:")
@@ -67,6 +75,7 @@ if __name__ == "__main__":
     print("KMPAlgorithm:", KMPAlgorithm.run_algorithm(no_pattern, text))
     print("BMAlgorithm:", BMAlgorithm.run_algorithm(no_pattern, text))
     print("BMAlgorithm2:", BMAlgorithm2.run_algorithm(no_pattern, text))
+    print("RKAlgorithm:", RKAlgorithm.run_algorithm(no_pattern, text))
 
     # predefined string-text pairs
     pairs = [("KOMPUTER", "SGEJCEKOMPUTERDWOCJW"), ("AABA", "AABAACAADAABAABA"), 
@@ -80,5 +89,6 @@ if __name__ == "__main__":
         print("KMPAlgorithm:", pair[0], pair[1], KMPAlgorithm.run_algorithm(pair[0], pair[1]))
         print("BMAlgorithm:", pair[0], pair[1], BMAlgorithm.run_algorithm(pair[0], pair[1]))
         print("BMAlgorithm2:", pair[0], pair[1], BMAlgorithm2.run_algorithm(pair[0], pair[1]))
+        print("RKAlgorithm:", pair[0], pair[1], RKAlgorithm.run_algorithm(pair[0], pair[1]))
         print("---")
             

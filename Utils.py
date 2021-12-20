@@ -54,7 +54,7 @@ class Utils():
 
     def _generate_text_from_file(file_name):
         with open(file_name, encoding='utf8') as file:
-            text = file.read()
+            text = file.read().upper()
 
        # print(text)
 
