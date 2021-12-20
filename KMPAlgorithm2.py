@@ -4,7 +4,7 @@ class KMPAlgorithm2:
 
 
     def __str__(self):
-        return "KMPAlgorithm"
+        return "KMPAlgorithm2"
 
 
     @staticmethod
