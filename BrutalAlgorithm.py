@@ -20,7 +20,9 @@ class BrutalAlgorithm:
                     if (text[text_index + pattern_index] != pattern[pattern_index]):
                         pattern_index -= 1
                         break
-
+                
+                # pattern_index += 1
+                # if (pattern_index == pattern_length):
                 if (pattern_index == pattern_length - 1):
                     return text_index
         

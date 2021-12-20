@@ -92,3 +92,6 @@ if __name__ == "__main__":
         print("RKAlgorithm:", pair[0], pair[1], RKAlgorithm.run_algorithm(pair[0], pair[1]))
         print("---")
             
+
+    pa = ("AAB", "AAAB")
+    print("BrutalAlgorithm2:", pa[0], pa[1], BrutalAlgorithm2.run_algorithm(pa[0], pa[1]))

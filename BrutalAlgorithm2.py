@@ -19,8 +19,8 @@ class BrutalAlgorithm2:
                 if (text[text_index] == pattern[pattern_index]):
                     pattern_index += 1
                 else:
-                    pattern_index = 0
                     text_index -= pattern_index
+                    pattern_index = 0
 
                 text_index += 1
 
