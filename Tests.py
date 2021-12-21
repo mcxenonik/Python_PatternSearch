@@ -110,14 +110,14 @@ if __name__ == "__main__":
              ("FAA", "AABCCAADDEE"), ("ABAAB", "AAAAAABAABAAB")]
 
     for pair in pairs:
-        print("BrutalAlgorithm: ", pair[0], pair[1], BrutalAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
-        print("BrutalAlgorithm2:", pair[0], pair[1], BrutalAlgorithm2.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
-        print("KMPAlgorithm:    ", pair[0], pair[1], KMPAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
-        print("KMPAlgorithm2:   ", pair[0], pair[1], KMPAlgorithm2.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
-        print("KMPAlgorithm3:   ", pair[0], pair[1], KMPAlgorithm3.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
-        print("BMAlgorithm:     ", pair[0], pair[1], BMAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
-        print("BMAlgorithm2:    ", pair[0], pair[1], BMAlgorithm2.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
-        print("RKAlgorithm:     ", pair[0], pair[1], RKAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pattern, text))
+        print("BrutalAlgorithm: ", pair[0], pair[1], BrutalAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
+        print("BrutalAlgorithm2:", pair[0], pair[1], BrutalAlgorithm2.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
+        print("KMPAlgorithm:    ", pair[0], pair[1], KMPAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
+        print("KMPAlgorithm2:   ", pair[0], pair[1], KMPAlgorithm2.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
+        print("KMPAlgorithm3:   ", pair[0], pair[1], KMPAlgorithm3.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
+        print("BMAlgorithm:     ", pair[0], pair[1], BMAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
+        print("BMAlgorithm2:    ", pair[0], pair[1], BMAlgorithm2.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
+        print("RKAlgorithm:     ", pair[0], pair[1], RKAlgorithm.run_algorithm(pair[0], pair[1]), "| PYTHON FIND:", pair[1].find(pair[0]), "| PYTHON FINDALL:", findAll(pair[0], pair[1]))
         print("---")
             
 
