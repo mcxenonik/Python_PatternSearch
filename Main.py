@@ -33,8 +33,8 @@ if __name__ == "__main__":
     # number_of_elements_list = [n for n in range(1000, 68336, 5000)]            # MAX 68336
     # number_of_elements_list = [n for n in range(0, 10001, 500)]
     # number_of_elements_list = [n for n in range(100, 5001, 100)]
-    # number_of_elements_list = [n for n in range(100, 3001, 100)]
-    number_of_elements_list = [n for n in range(100, 2001, 100)]
+    number_of_elements_list = [n for n in range(100, 1001, 100)]
+    # number_of_elements_list = [n for n in range(100, 2001, 100)]
     # number_of_elements_list = [n for n in range(10, 15, 10)]
 
     run(input_file_name, number_of_elements_list)

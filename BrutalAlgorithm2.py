@@ -14,8 +14,11 @@ class BrutalAlgorithm2:
         pattern_index = 0
         text_index = 0
 
+        results = []
+
         if (pattern and text):
-            while (text_index < text_length and pattern_index < pattern_length):
+            while (text_index < text_length):
+            # while (text_index < text_length and pattern_index < pattern_length):
                 if (text[text_index] == pattern[pattern_index]):
                     pattern_index += 1
                 else:
@@ -24,7 +27,18 @@ class BrutalAlgorithm2:
 
                 text_index += 1
 
-            if (pattern_index == pattern_length):
-                return text_index - pattern_length
+                if (pattern_index == pattern_length):
+                    # return text_index - pattern_length
+                    results.append(text_index - pattern_length)
+                    text_index -= pattern_index
+                    pattern_index = 0
+                    text_index += 1
+
+            # if (pattern_index == pattern_length):
+            #     # return text_index - pattern_length
+            #     results.append(text_index - pattern_length)
         
-        return None
+        if (len(results) != 0):
+            return results
+        else:
+            return None

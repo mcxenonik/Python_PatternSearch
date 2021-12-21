@@ -20,6 +20,8 @@ class RKAlgorithm:
         text_hash = 0
         h = 1
 
+        results = []
+
         if (pattern and text and text_length >= pattern_length):
             # The value of h would be "pow(d, M-1)% q"
             for pattern_index in range(pattern_length - 1):
@@ -44,7 +46,8 @@ class RKAlgorithm:
                     pattern_index += 1
                     # if p == t and pat[0...M-1] = txt[i, i + 1, ...i + M-1]
                     if (pattern_index == pattern_length):
-                        return text_index
+                        # return text_index
+                        results.append(text_index)
 
                 # Calculate hash value for next window of text: Remove
                 # leading digit, add trailing digit
@@ -55,4 +58,7 @@ class RKAlgorithm:
                     if (text_hash < 0):
                         text_hash += q
 
-        return None
+        if (len(results) != 0):
+            return results
+        else:
+            return None

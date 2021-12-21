@@ -14,6 +14,8 @@ class BMAlgorithm:
         pattern_index = 0
         text_index = 0
 
+        results = []
+
         if (pattern and text):
             right = BMAlgorithm._right_array(pattern)
 
@@ -26,9 +28,15 @@ class BMAlgorithm:
                         break 
                 
                 if (skip == 0):
-                    return text_index
+                    # return text_index
+                    results.append(text_index)
+                    text_index -= skip
+                    text_index += 1
 
-        return None
+        if (len(results) != 0):
+            return results
+        else:
+            return None
 
     def _right_array(pattern):
         pattern_length = len(pattern)

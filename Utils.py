@@ -33,9 +33,11 @@ class Utils():
 
 
     def _generate_text_of_random_words(number_of_elements, max_word_length=15):
-        alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-                    "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-                    "u", "w", "v", "x", "y", "z"]
+        # alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+        #             "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+        #             "U", "W", "V", "X", "Y", "Z"]
+        alphabet = ["A", "B"]
+
         text = ""
 
         for i in range(number_of_elements):
@@ -47,8 +49,6 @@ class Utils():
             
             text += word + " "
 
-        # print(text)
-
         return text
 
 
@@ -56,29 +56,14 @@ class Utils():
         with open(file_name, encoding='utf8') as file:
             text = file.read().upper()
 
-       # print(text)
-
         return text
 
 
     def _generate_words_list_from_text(text):
         words_list = text.split()
-        words_list = Utils._clear_words(words_list)
-
-        # Utils._print_table(words_list)
+        # words_list = Utils._clear_words(words_list)
 
         return words_list
-
-
-    def _print_table(table):
-        print("TABLE:")
-        print("-------------------------")
-
-        for element in table:
-            print(element, end=" | ")
-
-        print("\n-------------------------")
-        print("NUMBER OF ELEMENTS:", len(table), "\n")
 
 
     def _draw_plot(algorithm_name, xpoints, ypoints):
@@ -111,8 +96,6 @@ class Utils():
 
         if (gc_old): 
             gc.enable()
-
-        # print(found_index)
 
         return stop - start
 

@@ -11,33 +11,45 @@ class KMPAlgorithm3:
     def run_algorithm(pattern, text):
         M = len(pattern)
         N = len(text)
+
+        results = []
     
         # create lps[] that will hold the longest prefix suffix 
         # values for pattern
         lps = [0]*M
         j = 0 # index for pat[]
     
-        # Preprocess the pattern (calculate lps[] array)
-        KMPAlgorithm3.computeLPSArray(pattern, M, lps)
-    
-        i = 0 # index for txt[]
-        while i < N:
-            if pattern[j] == text[i]:
-                i += 1
-                j += 1
-    
-            if j == M:
-                return i - j
-                # j = lps[j-1]
-    
-            # mismatch after j matches
-            elif i < N and pattern[j] != text[i]:
-                # Do not match lps[0..lps[j-1]] characters,
-                # they will match anyway
-                if j != 0:
-                    j = lps[j-1]
-                else:
+        if (pattern and text):
+            # Preprocess the pattern (calculate lps[] array)
+            KMPAlgorithm3.computeLPSArray(pattern, M, lps)
+        
+            i = 0 # index for txt[]
+            while i < N:
+                if pattern[j] == text[i]:
                     i += 1
+                    j += 1
+        
+                if j == M:
+                    # return i - j
+                    results.append(i - j)
+                    i -= j
+                    j = 0
+                    i += 1
+                    # j = lps[j-1]
+        
+                # mismatch after j matches
+                elif i < N and pattern[j] != text[i]:
+                    # Do not match lps[0..lps[j-1]] characters,
+                    # they will match anyway
+                    if j != 0:
+                        j = lps[j-1]
+                    else:
+                        i += 1
+
+        if (len(results) != 0):
+            return results
+        else:
+            return None
 
 
     def computeLPSArray(pat, M, lps):
