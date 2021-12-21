@@ -102,7 +102,7 @@ class Utils():
 
 
     @staticmethod
-    def start_measurements(algorithm, file_name, number_of_elements_list):
+    def start_measurements(algorithm, file_name, number_of_elements_list, shift=0):
         text = Utils._generate_text_from_file(file_name)
         words_list = Utils._generate_words_list_from_text(text)
         algorithm_name = str(algorithm())
@@ -112,7 +112,7 @@ class Utils():
 
         for number_of_elements in number_of_elements_list:
             process_time = 0
-            for pattern in words_list[:number_of_elements]:
+            for pattern in words_list[shift:shift + number_of_elements]:
                 process_time += Utils._measure_time(algorithm, text, pattern)
             
             ypoints.append(process_time)

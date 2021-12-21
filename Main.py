@@ -6,9 +6,12 @@ from KMPAlgorithm3 import KMPAlgorithm3
 from BMAlgorithm import BMAlgorithm
 from BMAlgorithm2 import BMAlgorithm2
 from RKAlgorithm import RKAlgorithm
+from PythonAlgorithm import PythonAlgorithm
 from Utils import Utils
 
 def run(input_file_name, number_of_elements_list):
+    Utils.start_measurements(PythonAlgorithm, input_file_name, number_of_elements_list)
+
     Utils.start_measurements(RKAlgorithm, input_file_name, number_of_elements_list)
 
     Utils.start_measurements(BrutalAlgorithm, input_file_name, number_of_elements_list)
@@ -33,7 +36,8 @@ if __name__ == "__main__":
     # number_of_elements_list = [n for n in range(1000, 68336, 5000)]            # MAX 68336
     # number_of_elements_list = [n for n in range(0, 10001, 500)]
     # number_of_elements_list = [n for n in range(100, 5001, 100)]
-    number_of_elements_list = [n for n in range(100, 1001, 100)]
+    # number_of_elements_list = [n for n in range(100, 1001, 100)]
+    number_of_elements_list = [n for n in range(100, 501, 100)]
     # number_of_elements_list = [n for n in range(100, 2001, 100)]
     # number_of_elements_list = [n for n in range(10, 15, 10)]
 

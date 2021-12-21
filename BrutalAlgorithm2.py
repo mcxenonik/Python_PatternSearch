@@ -28,9 +28,8 @@ class BrutalAlgorithm2:
 
                 if (pattern_index == pattern_length):
                     results.append(text_index - pattern_length)
-                    text_index -= pattern_index
+                    text_index -= pattern_index - 1
                     pattern_index = 0
-                    text_index += 1
         
         if (results):
             return results
