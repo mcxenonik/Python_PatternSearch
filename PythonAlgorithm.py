@@ -31,6 +31,8 @@ class PythonAlgorithm:
     @staticmethod
     def run_algorithm2(pattern, text):
         if (pattern and text):
-            return text.find(pattern)
+            text_index = text.find(pattern)
+            if (text_index != -1):
+                return text_index
 
         return None
