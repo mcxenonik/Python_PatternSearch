@@ -23,7 +23,12 @@ class BMAlgorithm:
                 skip = 0
                 for pattern_index in range(pattern_length - 1, -1, -1):
                     if (text[text_index + pattern_index] != pattern[pattern_index]):
-                        skip = max(1, pattern_index - right[text[text_index + pattern_index]])
+                        # skip = max(1, pattern_index - right.get(text[text_index + pattern_index], -1))
+                        if (text[text_index + pattern_index] in right):
+                            skip = max(1, pattern_index - right[text[text_index + pattern_index]])
+                        else:
+                            skip = max(1, pattern_index + 1)
+                        
                         text_index += skip
                         break 
                 
@@ -51,7 +56,12 @@ class BMAlgorithm:
                 skip = 0
                 for pattern_index in range(pattern_length - 1, -1, -1):
                     if (text[text_index + pattern_index] != pattern[pattern_index]):
-                        skip = max(1, pattern_index - right[text[text_index + pattern_index]])
+                        # skip = max(1, pattern_index - right.get(text[text_index + pattern_index], -1))
+                        if (text[text_index + pattern_index] in right):
+                            skip = max(1, pattern_index - right[text[text_index + pattern_index]])
+                        else:
+                            skip = max(1, pattern_index + 1)
+                        
                         text_index += skip
                         break 
                 
@@ -63,15 +73,7 @@ class BMAlgorithm:
 
     def _right_array(pattern):
         pattern_length = len(pattern)
-
-        right = {'\n': -1, ' ': -1, ',': -1, '.': -1, '…': -1, '-': -1, '–': -1, '—': -1, '/': -1,
-                 ':': -1, ';': -1, '?': -1, '!': -1, '*': -1, '(': -1, ')': -1, '«': -1, '»': -1,
-                 'A': -1, 'Ą': -1, 'À': -1, 'Æ': -1, 'B': -1, 'C': -1, 'Ć': -1, 'D': -1, 'E': -1,
-                 'Ę': -1, 'É': -1, 'F': -1, 'G': -1, 'H': -1, 'I': -1, 'J': -1, 'K': -1, 'L': -1,
-                 'Ł': -1, 'M': -1, 'N': -1, 'Ń': -1, 'O': -1, 'Ó': -1, 'P': -1, 'Q': -1, 'R': -1,
-                 'S': -1, 'Ś': -1, 'T': -1, 'U': -1, 'V': -1, 'W': -1, 'X': -1, 'Y': -1, 'Z': -1,
-                 'Ż': -1, 'Ź': -1, '0': -1, '1': -1, '2': -1, '3': -1, '4': -1, '5': -1, '6': -1, 
-                 '7': -1, '8': -1, '9': -1}
+        right = {}
 
         for pattern_index in range(pattern_length):
             right[pattern[pattern_index]] = pattern_index

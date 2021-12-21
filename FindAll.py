@@ -11,4 +11,7 @@ def findAll(pattern, text):
             results.append(text_index)
             text_index += 1
 
-    return results
+    if (results):
+        return results
+    else:
+        return None
