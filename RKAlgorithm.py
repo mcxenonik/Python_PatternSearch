@@ -4,7 +4,7 @@ class RKAlgorithm:
 
 
     def __str__(self):
-        return "RKAlgorithm"
+        return "RK_Algorithm"
 
 
     @staticmethod

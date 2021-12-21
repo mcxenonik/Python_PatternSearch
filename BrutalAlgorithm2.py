@@ -4,7 +4,7 @@ class BrutalAlgorithm2:
 
 
     def __str__(self):
-        return "BrutalAlgorithm2"
+        return "Brutal_Algorithm_2"
 
 
     @staticmethod

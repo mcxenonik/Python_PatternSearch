@@ -4,7 +4,7 @@ class BMAlgorithm2:
 
 
     def __str__(self):
-        return "BMAlgorithm2"
+        return "BM_Algorithm2"
 
 
     @staticmethod
